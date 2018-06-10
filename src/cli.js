@@ -22,9 +22,9 @@ let cli = {
             console.log("Process: " + document.location.href);
             lastDocument = document;
             if (sortOrder === "ascending") {
-                allContents.push(parseContents(document).reverse());
+                allContents.push(...parseContents(document).reverse());
             } else {
-                allContents.push(parseContents(document));
+                allContents.push(...parseContents(document));
             }
 
         }
