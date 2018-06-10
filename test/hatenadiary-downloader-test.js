@@ -34,7 +34,7 @@ describe("hatenadiary-downloader", () => {
             }
         }
         assert.ok(count, 3);
-        assert.equal(URLs, [
+        assert.deepEqual(URLs, [
             'http://d.hatena.ne.jp/t-wada/searchdiary?word=*[XP]',
             'http://d.hatena.ne.jp/t-wada/searchdiary?of=3&word=%2A%5BXP%5D',
             'http://d.hatena.ne.jp/t-wada/searchdiary?of=6&word=%2A%5BXP%5D',
