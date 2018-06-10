@@ -1,0 +1,45 @@
+{
+  "name": "hatenadiary-downloader",
+  "version": "1.0.0",
+  "description": "はてなダイアリーの記事を一括ダウンロードするCLI",
+  "keywords": [
+    "diary",
+    "download",
+    "hateda",
+    "hatena"
+  ],
+  "homepage": "https://github.com/azu/hatenadiary-downloader",
+  "bugs": {
+    "url": "https://github.com/azu/hatenadiary-downloader/issues"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "bin": {
+    "hatenadiary-downloader": "./bin/cmd.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/hatenadiary-downloader.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/hatenadiary-downloader.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "common-tags": "^1.8.0",
+    "jsdom": "^11.11.0",
+    "meow": "^5.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
