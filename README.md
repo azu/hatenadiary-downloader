@@ -1,4 +1,5 @@
-# hatenadiary-downloader
+# hatenadiary-downloader [![Build Status](https://travis-ci.org/azu/hatenadiary-downloader.svg?branch=master)](https://travis-ci.org/azu/hatenadiary-downloader)
+
 
 はてなダイアリーの記事を一括ダウンロードするツール。
 
