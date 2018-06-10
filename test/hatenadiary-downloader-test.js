@@ -21,7 +21,9 @@ describe("hatenadiary-downloader", () => {
         assert.ok(html.includes("html"));
     });
     it("should async iterator for createFetchReader", async () => {
-        const iterator = createFetchReader("http://d.hatena.ne.jp/t-wada/searchdiary?word=*[XP]");
+        const iterator = createFetchReader("http://d.hatena.ne.jp/t-wada/searchdiary?word=*[XP]", {
+            intervalTimeMs: 100
+        });
         let count = 0;
         const URLs = [];
         for await (const document of iterator) {
