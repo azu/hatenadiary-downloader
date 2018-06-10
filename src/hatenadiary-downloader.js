@@ -2,10 +2,18 @@
 "use strict";
 const JSDOM = require("jsdom").JSDOM;
 const { html, safeHtml } = require('common-tags');
+const stripScripts = (element) => {
+    const scripts = element.getElementsByTagName('script');
+    let i = scripts.length;
+    while (i--) {
+        scripts[i].parentNode.removeChild(scripts[i]);
+    }
+    return element;
+};
 
 const parseContents = (document) => {
     return Array.from(document.querySelectorAll("div.day"), (articleDOM) => {
-        return articleDOM.outerHTML;
+        return stripScripts(articleDOM).outerHTML;
     });
 };
 
