@@ -10,6 +10,13 @@ const stripScripts = (element) => {
     }
     return element;
 };
+const makeAbsolute = (element) => {
+    Array.from(element.querySelectorAll("a"), (linkNode) =>{
+        const url = linkNode.href;
+        
+    })
+};
+
 
 const parseContents = (document) => {
     return Array.from(document.querySelectorAll("div.day"), (articleDOM) => {
