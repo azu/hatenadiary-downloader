@@ -1,6 +1,6 @@
 {
   "name": "hatenadiary-downloader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "はてなダイアリーの記事を一括ダウンロードするCLI",
   "keywords": [
     "diary",
