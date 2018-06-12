@@ -18,7 +18,6 @@ describe("hatenadiary-downloader", () => {
         const document = await fetchDocument("http://d.hatena.ne.jp/t-wada/searchdiary?word=*[XP]");
         const contents = parseContents(document);
         const html = joinArticleContents(document, contents);
-        console.log(html)
         assert.ok(html.includes("html"));
     });
     it("should async iterator for createFetchReader", async () => {
