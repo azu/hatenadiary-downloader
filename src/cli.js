@@ -7,8 +7,8 @@ const assert = require("assert");
 let cli = {
     /**
      * @param {string} URL hatena diary URL
-     * @param {string } outputPath output Ptah
-     * @param {string } [sortOrder] ascending or descending
+     * @param {string} outputPath output Ptah
+     * @param {string} [sortOrder] ascending or descending
      */
     async run(URL, outputPath, sortOrder = "ascending") {
         assert.ok(URL !== undefined, "URL needed");
@@ -21,12 +21,7 @@ let cli = {
         for await (const document of fetchAsyncIterator) {
             console.log("Process: " + document.location.href);
             lastDocument = document;
-            if (sortOrder === "ascending") {
-                allContents.push(...parseContents(document).reverse());
-            } else {
-                allContents.push(...parseContents(document));
-            }
-
+            allContents.push(...parseContents(document));
         }
         if (sortOrder === "ascending") {
             allContents.reverse();
