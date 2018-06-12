@@ -1,5 +1,6 @@
 // MIT © 2018 azu
 "use strict";
+const URL = require("url").URL;
 const JSDOM = require("jsdom").JSDOM;
 const { html, safeHtml } = require('common-tags');
 const stripScripts = (element) => {
@@ -10,17 +11,23 @@ const stripScripts = (element) => {
     }
     return element;
 };
-const makeAbsolute = (element) => {
-    Array.from(element.querySelectorAll("a"), (linkNode) =>{
-        const url = linkNode.href;
-        
-    })
+const makeAbsolute = (document, element) => {
+    Array.from(element.querySelectorAll("a"), (linkNode) => {
+        const href = linkNode.href;
+        try {
+            const url = new URL(href, document.location.href);
+            linkNode.href = url.href;
+        } catch (error) {
+            // nope
+        }
+    });
+    return element;
 };
 
 
 const parseContents = (document) => {
     return Array.from(document.querySelectorAll("div.day"), (articleDOM) => {
-        return stripScripts(articleDOM).outerHTML;
+        return makeAbsolute(document, stripScripts(articleDOM)).outerHTML;
     });
 };
 
